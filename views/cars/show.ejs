@@ -1,0 +1,54 @@
+<% layout('layout/boilerplate') %>
+<div class="row">
+    <div class="card text-center col-6" style="width: 40rem;">
+        <h1 class="text-center"><%= car.name %></h1>
+    <ul class="list-group list-group-flush">
+    <img src="<%= car.image %>" class="card-img-top" alt="...">
+    <li class="list-group-item"><b>Price:</b> <%= car.price %></li>
+    <li class="list-group-item"><b>Gear:</b> <%= car.gear %></li>
+    <li class="list-group-item"><b>Seat:</b> <%= car.seat %></li>
+    <li class="list-group-item text-center">
+        <a class="btn btn-primary" href="/users/cars/booking/<%= car.name %>">Book</a>
+        <% if(currUser && car.manager[0].equals(currUser.id)) { %>
+            <a class="btn btn-primary" href="/cars/<%= car.id %>/edit">Edit</a>
+        <% } %>
+        <a class="btn btn-primary" href="/cars">Back</a>
+    </li>
+    <% if(currUser && car.manager[0].equals(currUser.id)) { %>
+    <li class="list-group-item text-center">
+        <form action="/cars/<%= car.id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </li>
+    <% } %>
+    </ul>
+</div>
+
+<div class="col-6">
+    <div class="offset-3">
+        <h2>Leave a Review</h2>
+            <form action="/cars/<%= car.id %>/reviews" method="POST" class="mb-3 validate-form" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="rating">Rating</label>
+                    <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="body">Review</label>
+                    <textarea class="form-control mb-3" name="review[body]" id="body" cols="100" rows="3" required></textarea>
+                    <button class="btn btn-success">Submit</button>
+                </div>
+            </form>
+            <div class="card">
+            <% for(let review of car.reviews) { %>
+            <div class="card-body">
+                <h4 class="card-title">Rating: <%= review.rating %></h4>
+                <h6 class="card-text"><%= review.body %></h6>
+                <form action="/cars/<%=car.id%>/reviews/<%=review.id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </div>
+            <% } %>
+        </div>
+        </div>
+</div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/booking.css">
+</head>
+<body class="d-flex flex-column vh-100">
+    <%- include('../partials/navbar') %>
+    <div class="d-flex flex-column panel">
+        <h1 class="text-center">Bookings</h1>
+        <table class="custom-table">
+            <tr>
+              <th>Username</th>
+              <th>Booking Date</th>
+              <th>Pickup Status</th>
+              <th>Details</th>
+            </tr>
+            <% for(let order of orders){ %>
+                <tr>
+                  <td><%= order.username %></td>
+                  <td><%= order.pickUpDate %></td>
+                  <% if(order.isDispatch){ %>
+                  <td class="fw-bold" style="color: green">
+                        Dispatched
+                    </td>
+                    <% } else { %>
+                    <td class="fw-bold" style="color: red">
+                        Not Dispatched    
+                    </td>
+                    <% } %>
+                  <td><a class="btn btn-info">Details</a></td>
+                </tr>
+            <% } %>
+          </table>
+    </div>
+</body>
+</html>

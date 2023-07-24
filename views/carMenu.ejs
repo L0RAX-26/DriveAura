@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/menu.css">
+</head>
+<body class="d-flex flex-column vh-100">
+    <%- include('./partials/navbar') %>
+    <div class="panel">
+        <div class="car-type">
+            <img src="/images/hatchback.png" alt="A beautiful image" class="car-icon">
+            <h3 class="car-type-name">HatchBack</h3>
+            <p class="pricing">$400-$800/DAY</p>
+            <a href="/users/cars/HatchBack" class="book-button btn btn-lg btn-secondary font-weight-bold">Book</a>
+        </div>
+        <div class="car-type">
+            <img src="/images/sedan.png" alt="A beautiful image" class="car-icon">
+            <h3 class="car-type-name">Sedan</h3>
+            <p class="pricing">$1000-$1500/DAY</p>
+            <a href="/users/cars/Sedan" class="book-button btn btn-lg btn-secondary font-weight-bold">Book</a>
+        </div>
+        <div class="car-type">
+            <img src="/images/suv.png" alt="A beautiful image" class="car-icon">
+            <h3 class="car-type-name">SUV</h3>
+            <p class="pricing">$800-$1500/DAY</p>
+            <a href="/users/cars/SUV" class="book-button btn btn-lg btn-secondary font-weight-bold">Book</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<% layout('layout/boilerplate') %>
+<div class="col-6 offset-3">
+<div class="card text-center">
+    <img src="<%= order.car.image %>" class="card-img-top" alt="...">
+    <div class="card-header fw-bold" style="color: red;">
+        <%= order.car.name %>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fw-bold">Amount : <%= order.amount %></li>
+        <li class="list-group-item fw-bold">PickUp Date: <%= order.pickUpDate %></li>
+        <li class="list-group-item fw-bold" style="color: red">Must Carry your Driving License</li>
+        <% if(order) { %>
+            <li style="color: green" class="list-group-item fw-bold">
+                Payment Done
+            </li>
+        <% } else { %>
+            <li style="color: red" class="list-group-item fw-bold">
+                Payment Due
+            </li>
+        <% } %>
+    </ul>
+</div>
+</div>

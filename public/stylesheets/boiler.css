@@ -1,0 +1,7 @@
+#bd-img {
+    /* height: 100vh; */
+    background-color: red;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url('https://img.freepik.com/premium-photo/two-men-shaking-hands-parking-lot-car-showroom-ai-generated_866663-4221.jpg?w=1060');
+    background-size: cover;
+    background-position: center;
+}

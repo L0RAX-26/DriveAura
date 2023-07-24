@@ -1,0 +1,19 @@
+<% layout('layout/boilerplate') %>
+<div class="col-6 offset-3">
+<div class="card text-center">
+    <img src="<%= order.car.image %>" class="card-img-top" alt="...">
+    <div class="card-header fw-bold" style="color: red;">
+        <%= order.car.name %>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fw-bold">Amount : <%= order.amount %></li>
+        <li class="list-group-item fw-bold">PickUp Date: <%= order.pickUpDate %></li>
+        <li class="list-group-item fw-bold">
+          <form action="/users/car/confirmation" method="POST">
+            <button style="margin-right: 3%;" class="btn btn-success" name="payStatus" value="done">Pay Now</a>
+            <button class="btn btn-danger" name="payStatus" value="pending">Pay Later</a>
+          </form>
+        </li>
+      </ul>
+</div>
+</div>

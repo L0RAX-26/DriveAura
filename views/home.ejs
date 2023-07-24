@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveAura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+</head>
+<body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <!-- <h3 class="float-md-left mb-0">DriveAura</h3> -->
+                <nav class="nav nav-masthead justify-content-center float-md-right">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/menu">Cars</a>
+                    <% if(currUser && managerId === currUser.id) { %>
+                    <a class="nav-link" href="/cars/new">New Car</a>
+                    <a class="nav-link" href="/manager/bookings">Bookings</a>
+                    <% } %>
+                    <% if(!currUser) { %>
+                    <a id="login" class="nav-link" href="/login">Login</a>
+                    <a href="/register" class="nav-link">Register</a>
+                    <% } else { %>
+                    <a id="logout" class="nav-link" href="/logout">Logout</a>
+                    <% } %>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-3">
+            <h1>DriveAura</h1>
+            <a href="/menu" class="btn btn-lg btn-secondary font-weight-bold">View Cars</a>
+        </main>
+
+        <footer class="footer py-3 mt-auto">
+            <div class="container">
+                <span class="text-light">&copy; DriveAura 2023</span>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+</body>
+</html>

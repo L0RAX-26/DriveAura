@@ -1,0 +1,28 @@
+DRIVE AURA
+
+1. Home - Login(Hackerrank Copy), Heavy Design, SignUp as a Manager/Customer
+
+2. A. SignUp Customer:
+	*
+   B. SignUp Manager:
+	*
+
+3. Customer(After Login):
+	* Pickup/DropUp
+	* Listing - Filter - Car Type - Map
+
+4. Car:
+	* Car Info
+	* Reviews
+	* Pickup/Drop Info
+	* Price Breakdown
+
+5. Payment Page:
+	* Card Details
+	* Pay Now
+	* Payment Successfull flash and Order Details
+
+6. Manager:
+	* Car CRUD Operation
+
+rentalars.com

@@ -1,0 +1,71 @@
+<% layout('layout/boilerplate') %>
+    <h1 class="text-center">Add New Car</h1>
+    <div class="col-6 offset-3">
+    <form class="row g-3 validate-form" action="/cars" method="POST" novalidate>
+        <div>
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="car[name]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div>
+            <label for="price" class="form-label">Price</label>
+            <div class="input-group">
+                <div class="input-group-text">$</div>
+                <input type="text" class="form-control" id="price" name="car[price]" required>
+              </div>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+        </div>
+        <div>
+            <label for="gear" class="form-label">Gear</label>
+            <input type="text" class="form-control" id="gear" name="car[gear]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div>
+            <label for="seat" class="form-label">Seat</label>
+            <input type="text" class="form-control" id="seat" name="car[seat]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please select a valid Seat.
+            </div>
+          </div>
+          <div>
+            <label for="type" class="form-label">Type</label>
+            <input type="text" class="form-control" id="type" name="car[type]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please select a valid Type.
+            </div>
+          </div>
+          <div>
+            <label for="type" class="form-label">Location</label>
+            <input type="text" class="form-control" id="type" name="car[location]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please select a valid Location.
+            </div>
+          </div>
+        <div>
+            <label for="image" class="form-label">Image</label>
+            <input type="text" class="form-control" id="image" name="car[image]" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary">Add</button>
+          <a class="btn btn-danger" href="/cars">Back</a>
+        </div>
+      </form>
+    </div>
